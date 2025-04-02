@@ -25,9 +25,9 @@ This project was created using `bun init` in bun v1.1.36. [Bun](https://bun.sh) 
 
 You will need the following credentials:
 
-- HTTP Authorization Bearer token
-
-The bearer token can be obtained from the browser developer tools. Open the network tab, locate a request to the Integrity API, and copy the `Authorization` header value.
+- NPN
+- password
+- Bearer token
 
 ### Environment
 
@@ -41,3 +41,14 @@ Save the `.env.sample` file as `.env` and enter your credentials.
   bun run index.ts
   ```
 3. The JSON file will be saved in the current directory.
+
+Note that the index.ts script is a work in progress and the book script is all that is needed at the moment.
+
+### Book
+
+Note: All you need is the bearer token, which can be obtained from the browser developer tools. Open the network tab, locate a request to the Integrity API, and copy the `Authorization` header value.
+
+Then you can just run the book script:
+  ```bash
+  bun run book.fetch.ts
+  ```
