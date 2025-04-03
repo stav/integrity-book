@@ -1,14 +1,16 @@
 {
-  "name": "pupped",
-  "module": "index.ts",
+  "name": "integrity-book",
   "type": "module",
+  "module": "index.ts",
+  "packageManager": "bun@1.1.36",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "1.1.36"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "puppeteer": "^24.5.0"
   }
 }
