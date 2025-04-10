@@ -1,10 +1,10 @@
 import fs from "fs/promises";
 import dotenv from "dotenv";
-import type { ApiResponse } from "./types";
+import type { ApiResponse, Lead } from "./types";
 
 dotenv.config();
 
-function writeBook(book: ApiResponse) {
+function writeBook(book: Lead[]) {
   const timestamp = new Date().toISOString();
   const filename = `book_${timestamp}.json`;
   fs.writeFile(filename, JSON.stringify(book, null, 2))
@@ -12,7 +12,7 @@ function writeBook(book: ApiResponse) {
     .catch((err) => console.error("Error saving book:", err));
 }
 
-async function getBook() {
+async function getBook(): Promise<ApiResponse> {
   const response = await fetch(
     "https://ae-api.integrity.com/ae-leads-api/api/v3.0/Leads?PageSize=144&CurrentPage=1&IncludeReminder=true&IncludePolicyCounts=true&IncludeAddress=true&IncludeTags=true&IncludeContactPreference=true&Sort=createDate:desc",
     {
@@ -46,7 +46,7 @@ async function getBook() {
 async function main() {
   const book = await getBook();
   console.log(book.pageResult);
-  writeBook(book);
+  writeBook(book.result);
 }
 
 main();

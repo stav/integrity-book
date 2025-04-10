@@ -41,3 +41,11 @@ Save the `.env.sample` file as `.env` and enter your credentials.
   bun run index.ts
   ```
 3. The JSON file will be saved in the current directory.
+
+### CSV Output
+
+To output the data in CSV format, run the `convert` script:
+
+```bash
+bun run convert.ts
+```

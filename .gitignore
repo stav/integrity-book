@@ -176,3 +176,5 @@ dist
 
 # App
 book*.json
+book.json
+book.csv

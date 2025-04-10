@@ -76,6 +76,7 @@ type Lead = {
   lifePolicyCount: number;
   healthPolicyCount: number;
   subsidyLevel: string;
+  [key: string]: string | number | null; // Index signature
 };
 
 export type ApiResponse = {
@@ -87,4 +88,4 @@ export type ApiResponse = {
   result: Lead[];
 };
 
-export type Token = string | undefined
+export type Token = string | undefined;
